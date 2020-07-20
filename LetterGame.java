@@ -48,6 +48,31 @@ class LetterGame
     }
 
     /**
+     * Prompt the user for one or multiple characters and return them.
+     */
+    private static char[] promptChars()
+    {
+        System.out.print("Letter: ");
+
+        Scanner scan = new Scanner(System.in);
+        String string = scan.next().toUpperCase();
+
+        return string.toCharArray();
+    }
+
+    /**
+     * Prompt for character guesses.
+     */
+    public void tryChars()
+    {
+        char[] chars = promptChars();
+
+        for (int i = 0; i < chars.length; i++) {
+            puzzle.tryChar(chars[i]);
+        }
+    }
+
+    /**
      * Print the list of incorrect chars.
      */
     public void showWrongChars()
@@ -62,18 +87,6 @@ class LetterGame
             );
 
         System.out.println(wrong);
-    }
-
-    /**
-     * Prompt for character guesses.
-     */
-    public void tryChars()
-    {
-        char[] chars = promptChars();
-
-        for (int i = 0; i < chars.length; i++) {
-            puzzle.tryChar(chars[i]);
-        }
     }
 
     /**
@@ -97,19 +110,6 @@ class LetterGame
     {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-    }
-
-    /**
-     * Prompt the user for one or multiple characters and return them.
-     */
-    private static char[] promptChars()
-    {
-        System.out.print("Letter: ");
-
-        Scanner scan = new Scanner(System.in);
-        String string = scan.next().toUpperCase();
-
-        return string.toCharArray();
     }
 
     /**
