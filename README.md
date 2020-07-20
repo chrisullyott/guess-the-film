@@ -33,7 +33,6 @@ Entering `Letter: bcdr` ...
 **Guess the film!**
 RAIDER_ __ __E ____ AR_
 Wrong: 2 of 7 [B, C]
-Letter:
 ```
 
 Entering `Letter: raiders of the lost ark`
