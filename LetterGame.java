@@ -39,23 +39,40 @@ class LetterGame
             System.out.println("**" + header + "**");
             System.out.println(puzzle.getCurrentString());
 
-            if (wrongChars.size() > 0) {
-                String wrong = String.format(
-                    "Wrong: %s of %s %s",
-                    wrongChars.size(),
-                    wrongMax,
-                    wrongChars.toString()
-                    );
-                System.out.println(wrong);
-            }
+            showWrongChars();
 
             if (puzzle.isSolved() || wrongChars.size() >= wrongMax) break;
 
-            char[] chars = promptChars();
+            tryChars();
+        }
+    }
 
-            for (int i = 0; i < chars.length; i++) {
-                puzzle.tryChar(chars[i]);
-            }
+    /**
+     * Print the list of incorrect chars.
+     */
+    public void showWrongChars()
+    {
+        if (wrongChars.size() == 0) return;
+
+        String wrong = String.format(
+            "Wrong: %s of %s %s",
+            wrongChars.size(),
+            wrongMax,
+            wrongChars.toString()
+            );
+
+        System.out.println(wrong);
+    }
+
+    /**
+     * Prompt for character guesses.
+     */
+    public void tryChars()
+    {
+        char[] chars = promptChars();
+
+        for (int i = 0; i < chars.length; i++) {
+            puzzle.tryChar(chars[i]);
         }
     }
 
