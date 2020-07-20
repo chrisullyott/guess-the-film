@@ -67,7 +67,7 @@ class LetterGame
         System.out.print("Letter: ");
 
         Scanner scan = new Scanner(System.in);
-        String string = scan.next().toUpperCase();
+        String string = scan.nextLine().toUpperCase().replaceAll("[^A-Z0-9]", "");
 
         return string.toCharArray();
     }
