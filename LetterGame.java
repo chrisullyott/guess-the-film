@@ -49,9 +49,13 @@ class LetterGame
                 System.out.println(wrong);
             }
 
-            if (puzzle.isSolved() || wrongChars.size() == wrongMax) break;
+            if (puzzle.isSolved() || wrongChars.size() >= wrongMax) break;
 
-            puzzle.tryChar(promptChar());
+            char[] chars = promptChars();
+
+            for (int i = 0; i < chars.length; i++) {
+                puzzle.tryChar(chars[i]);
+            }
         }
     }
 
@@ -79,16 +83,16 @@ class LetterGame
     }
 
     /**
-     * Prompt the user for a character and return it.
+     * Prompt the user for one or multiple characters and return them.
      */
-    private static char promptChar()
+    private static char[] promptChars()
     {
         System.out.print("Letter: ");
 
         Scanner scan = new Scanner(System.in);
-        String string = scan.next();
+        String string = scan.next().toUpperCase();
 
-        return Character.toUpperCase(string.charAt(0));
+        return string.toCharArray();
     }
 
     /**
