@@ -35,16 +35,22 @@ class LetterGame
     {
         while (true) {
             clearScreen();
-
-            System.out.println("**" + header + "**");
-            System.out.println(puzzle.getCurrentString());
-
+            showHeader();
             showWrongChars();
 
             if (puzzle.isSolved() || wrongChars.size() >= wrongMax) break;
 
             tryChars();
         }
+    }
+
+    /**
+     * Show the game header.
+     */
+    public void showHeader()
+    {
+        System.out.println("**" + header + "**");
+        System.out.println(puzzle.getCurrentString());
     }
 
     /**
