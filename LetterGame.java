@@ -37,11 +37,17 @@ class LetterGame
             clearScreen();
             showHeader();
             showWrongChars();
-
-            if (puzzle.isSolved() || wrongChars.size() >= wrongMax) break;
-
+            if (isOver()) break;
             tryChars();
         }
+    }
+
+    /**
+     * Whether the game is over.
+     */
+    private boolean isOver()
+    {
+        return puzzle.isSolved() || wrongMax < wrongChars.size();
     }
 
     /**
