@@ -12,31 +12,37 @@ $ javac GuessTheFilm.java && java GuessTheFilm;
 
 ### How to play?
 
-Guess a character one at a time.
+Guess one or several characters at a time.
 
 ```bash
 **Guess the film!**
-_______ ________ __ ___ ________ ____
-Letter: a
+_______ __ ___ ____ ___
 ```
 
-```bash
-**Guess the film!**
-_____A_ ________ __ ___ ________ ____
-Letter: 
-```
+Entering `Letter: aie` ...
+
 
 ```bash
 **Guess the film!**
-E_E_NAL S_NSHINE O_ _HE S_O_LESS MIN_
-Wrong: 2 of 7 [Y, J]
-Letter: t
+_AI_E__ __ __E ____ A__
 ```
+
+Entering `Letter: bcdr` ...
 
 ```bash
 **Guess the film!**
-ETERNAL SUNSHINE OF THE SPOTLESS MIND
-Wrong: 3 of 7 [Y, J, C]
+RAIDER_ __ __E ____ AR_
+Wrong: 2 of 7 [B, C]
+Letter:
+```
+
+Entering `Letter: raiders of the lost ark`
+
+```bash
+**Guess the film!**
+RAIDERS OF THE LOST ARK
+Wrong: 2 of 7 [B, C]
 Correct!
-The answer is: ETERNAL SUNSHINE OF THE SPOTLESS MIND
+The answer is: RAIDERS OF THE LOST ARK
 ```
+
