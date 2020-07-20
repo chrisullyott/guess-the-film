@@ -47,7 +47,7 @@ class LetterGame
      */
     private boolean isOver()
     {
-        return puzzle.isSolved() || wrongMax < wrongChars.size();
+        return puzzle.isSolved() || wrongMax <= wrongChars.size();
     }
 
     /**
