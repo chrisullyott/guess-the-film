@@ -47,7 +47,7 @@ class LetterGame
     /**
      * Show the game header.
      */
-    public void showHeader()
+    private void showHeader()
     {
         System.out.println("**" + header + "**");
         System.out.println(puzzle.getCurrentString());
@@ -69,7 +69,7 @@ class LetterGame
     /**
      * Prompt for character guesses.
      */
-    public void tryChars()
+    private void tryChars()
     {
         char[] chars = promptChars();
 
@@ -81,7 +81,7 @@ class LetterGame
     /**
      * Print the list of incorrect chars.
      */
-    public void showWrongChars()
+    private void showWrongChars()
     {
         if (wrongChars.size() == 0) return;
 
